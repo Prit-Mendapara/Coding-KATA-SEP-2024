@@ -20,18 +20,20 @@ public class NavigatorTest
         Assert.That(isValid, Is.True);
     }
 
-    [Test]
-    public void Move_Forward_With_Initial_Position()
+    [TestCase(0)]
+    [TestCase(3)]
+    [TestCase(4)]
+    public void Move_Forward(int currentPosition)
     {
         //Arrange
-        var navigator = new Navigator(new Position());
+        var navigator = new Navigator(new Position(y: currentPosition));
         
         //Act
         navigator.MoveForward();
 
         //Assert
         Assert.That(navigator.Position.X, Is.Zero);
-        Assert.That(navigator.Position.Y, Is.EqualTo(1));
+        Assert.That(navigator.Position.Y, Is.EqualTo(4));
     }
 
     [TestCase(3, 4)]
