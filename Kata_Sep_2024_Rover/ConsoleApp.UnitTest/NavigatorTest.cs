@@ -19,4 +19,18 @@ public class NavigatorTest
         // Assert
         Assert.That(isValid, Is.True);
     }
+
+    [Test]
+    public void Move_Forward()
+    {
+        //Arrange
+        var navigator = new Navigator();
+        
+        //Act
+        navigator.MoveForward();
+
+        //Assert
+        Assert.That(navigator.Position.X, Is.Zero);
+        Assert.That(navigator.Position.Y, Is.EqualTo(1));
+    }
 }
