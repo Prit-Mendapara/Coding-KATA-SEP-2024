@@ -2,16 +2,16 @@ namespace ConsoleApp1;
 
 public class Navigator
 {
-    public Navigator()
+    public Navigator(Position? position = null)
     {
-        Position = new Position();
+        Position = position ?? new Position();
     }
     public bool IsValidKey(string key) =>
         key == "Forward" || key == "Left" || key == "Right";
 
     public void MoveForward()
     {
-        Position.Y++;
+        //Position.Y++;
     }
 
     public Position Position { get; }
